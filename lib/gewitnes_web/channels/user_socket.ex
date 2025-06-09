@@ -8,7 +8,8 @@ defmodule GewitnesWeb.UserSocket do
 
   ## Channels
 
-  channel "book:*", GewitnesWeb.BookChannel
+  channel "wild:*", GewitnesWeb.WildcardChannel
+  channel "dupe", GewitnesWeb.DedupeChannel
 
   # Socket params are passed from the client and can
   # be used to verify and authenticate a user. After

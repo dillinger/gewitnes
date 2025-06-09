@@ -7,7 +7,6 @@ defmodule GewitnesWeb.AuthSocket do
   # channel "book:*", GewitnesWeb.BookChannel
   channel "user:*", GewitnesWeb.AuthChannel
   channel "recurring", GewitnesWeb.RecurringChannel
-  channel "dupe", GewitnesWeb.DedupeChannel
 
   @impl true
   def connect(%{"token" => token}, socket) do
@@ -16,9 +15,9 @@ defmodule GewitnesWeb.AuthSocket do
         socket = assign(socket, :user_id, user_id)
         {:ok, socket}
 
-        # {:error, err} ->
-        #   Logger.error("#{__MODULE__} connect error #{inspect(err)}")
-        #   :error
+      {:error, err} ->
+        Logger.error("#{__MODULE__} connect error #{inspect(err)}")
+        :error
     end
   end
 
