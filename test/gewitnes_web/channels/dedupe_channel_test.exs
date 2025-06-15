@@ -9,10 +9,11 @@ defmodule GewitnesWeb.DedupeChannelTest do
 
   defp validate_buffer_contents(socket, expected_contents) do
     channel_state = :sys.get_state(socket.channel_pid())
+
     assert channel_state.assigns == %{
-      awaiting_buffer?: true,
-      buffer: expected_contents
-    }
+             awaiting_buffer?: true,
+             buffer: expected_contents
+           }
 
     socket
   end

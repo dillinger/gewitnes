@@ -7,6 +7,8 @@ defmodule Gewitnes.Application do
 
   @impl true
   def start(_type, _args) do
+    :ok = Gewitnes.Statix.connect()
+
     children = [
       GewitnesWeb.Telemetry,
       {DNSCluster, query: Application.get_env(:gewitnes, :dns_cluster_query) || :ignore},

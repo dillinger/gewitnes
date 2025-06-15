@@ -19,6 +19,10 @@ config :gewitnes, GewitnesWeb.Endpoint,
     tailwind: {Tailwind, :install_and_run, [:gewitnes, ~w(--watch)]}
   ]
 
+config :statsd_logger, port: 8126
+
+config :statix, Gewitnes.Statix, port: 8126
+
 # ## SSL Support
 #
 # In order to use HTTPS in development, a self-signed
