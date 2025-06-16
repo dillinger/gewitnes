@@ -21,8 +21,6 @@ config :gewitnes, GewitnesWeb.Endpoint,
 
 config :statsd_logger, port: 8126
 
-config :statix, Gewitnes.Statix, port: 8126
-
 # ## SSL Support
 #
 # In order to use HTTPS in development, a self-signed

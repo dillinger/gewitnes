@@ -7,7 +7,7 @@ defmodule Gewitnes.Application do
 
   @impl true
   def start(_type, _args) do
-    :ok = Gewitnes.Statix.connect()
+    Gewitnes.Dogmatix.start_link("localhost", 8126)
 
     children = [
       GewitnesWeb.Telemetry,

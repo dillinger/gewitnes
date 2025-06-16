@@ -55,7 +55,7 @@ defmodule Gewitnes.MixProject do
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.1.1"},
       {:bandit, "~> 1.5"},
-      {:statix, "~> 1.4"},
+      {:dogmatix, "~> 0.1.0"},
       {:statsd_logger, "~> 1.1", only: [:dev, :test]}
     ]
   end

@@ -16,5 +16,11 @@ config :swoosh, local: false
 # Do not print debug messages in production
 config :logger, level: :info
 
+# Configure Dogmatix for production
+config :dogmatix,
+  enabled: true,
+  host: System.get_env("DOGMATIX_HOST") || "localhost",
+  port: String.to_integer(System.get_env("DOGMATIX_PORT") || "8125")
+
 # Runtime production configuration, including reading
 # of environment variables, is done on config/runtime.exs.
